@@ -1,23 +1,34 @@
 package com.traductor;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Spanish_English implements MyDictionary{
-    @Override
-    public void readDict(String file) {
-        
+
+    private  String dictFile;
+    private Map<String, List<String>> dictionary = new HashMap<String, List<String>>;
+
+    Spanish_English(String file){
+        this.dictFile = file;
     }
 
     @Override
-    public void editDict(String file, String key, String definition) {
+    public void readDict() {
 
     }
 
     @Override
-    public void addToDict(String file, String key, String definition) {
+    public void editDict(String key, String definition) {
 
     }
 
     @Override
-    public void removeFromDict(String file, String key) {
+    public void addToDict(String key, String definition) {
+
+    }
+
+    @Override
+    public void removeFromDict(String key) {
 
     }
 }
