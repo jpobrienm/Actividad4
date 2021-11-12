@@ -6,7 +6,7 @@ import java.util.Map;
 public class Spanish_English implements MyDictionary{
 
     private  String dictFile;
-    private Map<String, List<String>> dictionary = new HashMap<String, List<String>>;
+    private Map<String, List<String>> dictionary = new HashMap<String, List<String>>();
 
     Spanish_English(String file){
         this.dictFile = file;
@@ -31,4 +31,10 @@ public class Spanish_English implements MyDictionary{
     public void removeFromDict(String key) {
 
     }
+
+    @Override
+    public void saveDictionary(){
+
+    }
+
 }
