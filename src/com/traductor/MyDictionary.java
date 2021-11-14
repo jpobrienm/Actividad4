@@ -1,11 +1,10 @@
 package com.traductor;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 interface MyDictionary {
     public void readDict() throws FileNotFoundException;
-    public void editDict(String key, String definition);
-    public void addToDict(String key, String definition);
-    public void removeFromDict(String key);
-    public void saveDictionary();
+    public String addToDict(String key, String definition) throws IOException;
+    public String removeFromDict(String key) throws IOException;
 }
