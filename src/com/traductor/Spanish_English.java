@@ -1,20 +1,24 @@
 package com.traductor;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class Spanish_English implements MyDictionary{
 
-    private  String dictFile;
-    private Map<String, List<String>> dictionary = new HashMap<String, List<String>>();
+    private final String file = "src/com/traductor/spanish-english";
+    private HashMap<String, String> dictionary = new HashMap<String, String>();
 
-    Spanish_English(String file){
-        this.dictFile = file;
+    Spanish_English(){
     }
 
     @Override
-    public void readDict() {
-
+    public void readDict() throws FileNotFoundException {
+        File dictFile = new File(file);
+        Scanner reader = new Scanner(dictFile);
+        while(reader.hasNextLine()) {
+            String[] line = reader.nextLine().split(",");
+            dictionary.put(line[0], line[1]);
+        }
     }
 
     @Override
